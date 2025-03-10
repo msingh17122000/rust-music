@@ -49,7 +49,7 @@ function MyPlaylists() {
         onTimeUpdate={updateProgress} // Update progress bar
         onEnded={() => setIsPlaying(false)} // Stop when finished
       />
-      <button onClick={togglePlayPause} style={{background:'white'}}>
+      <button onClick={togglePlayPause} style={{background:'orange',color:'white'}}>
         {isPlaying ? "Pause" : "Play"}
       </button>
 
@@ -57,6 +57,7 @@ function MyPlaylists() {
       <input
         type="range"
         min="0"
+        className='music-progress-bar'
         max={audioRef.current?.duration || 0} // Ensure max is the duration
         value={progress}
         onChange={seekAudio} // Seek when user moves slider
