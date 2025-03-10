@@ -3,7 +3,7 @@ import React from 'react'
 function Explore() {
   return (
     <div>
-      Explore Page with search bar
+      Explore Page with search bar 
     </div>
   )
 }
