@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import "./MyPlaylists.css"
 
 function MyPlaylists() {
   const audioRef = useRef(null);
