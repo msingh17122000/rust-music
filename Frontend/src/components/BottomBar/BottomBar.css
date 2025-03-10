@@ -1,0 +1,37 @@
+.bottom-bar-wrapper{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    width: 100%;
+    left: 0;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+.bottom-bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgb(28, 28, 28,0.6);
+    min-height: 70px;
+    max-width: 400px;
+    width: 100%;
+    padding: 0px 20px;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    gap: 20px;
+}
+.bottom-bar-navlink{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+}
+.bottom-bar-navlink:hover{
+    color: #D76B00;
+}
+.bottom-bar-title{
+    font-size: 12px;
+}
