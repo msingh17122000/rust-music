@@ -51,6 +51,11 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    text-decoration: none;
+    color: white;
+}
+.bottom-music-controller-music-data:hover{
+    color: white;
 }
 .separator{
     width: 100%;

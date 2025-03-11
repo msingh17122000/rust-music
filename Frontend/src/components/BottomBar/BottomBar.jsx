@@ -45,10 +45,10 @@ function BottomBar() {
                 transition={{delay:0.3}}
               >
                 {/* Song Info */}
-                <div className='bottom-music-controller-music-data'>
+                <Link className='bottom-music-controller-music-data' to={'/now-playing'}>
                   <div className='bottom-music-controller-music-name'>{currentSong.name}</div>
                   <div className='bottom-music-controller-music-artist'>{currentSong.artist}</div>
-                </div>
+                </Link>
 
                 {/* Play/Pause Button */}
                 <motion.button

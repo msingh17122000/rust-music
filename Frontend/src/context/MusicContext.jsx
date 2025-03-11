@@ -1,4 +1,4 @@
-import React, { createContext, useState, useRef } from "react";
+import React, { createContext, useState, useRef, useEffect } from "react";
 
 // Step 1: Create the context
 export const MusicContext = createContext();
@@ -10,7 +10,24 @@ export const MusicProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volumeLevel, setVolumeLevel] = useState(1); // Default 100%
   const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0); // Total duration of the song
   const audioRef = useRef(new Audio()); // Step 4: Create a single audio instance
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    // Update currentTime as the song plays
+    const updateTime = () => setCurrentTime(audio.currentTime);
+    const updateDuration = () => setDuration(audio.duration);
+
+    audio.addEventListener("timeupdate", updateTime);
+    audio.addEventListener("loadedmetadata", updateDuration); // Get duration when song loads
+
+    return () => {
+      audio.removeEventListener("timeupdate", updateTime);
+      audio.removeEventListener("loadedmetadata", updateDuration);
+    };
+  }, []);
 
   // Step 5: Play a song
   const playSong = (song) => {
@@ -78,7 +95,8 @@ export const MusicProvider = ({ children }) => {
         pauseSong,
         seek,
         changeVolume,
-        togglePlayPause
+        togglePlayPause,
+        duration
       }}
     >
       {children}

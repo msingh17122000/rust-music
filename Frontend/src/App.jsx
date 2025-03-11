@@ -11,13 +11,14 @@ function App() {
   return (
     <MusicProvider>
     <Router>
-      <Layout/>
       <Routes>
-        <Route path='/' element={<MyPlaylists/>} />
-        <Route path='/favourites' element={<Favourites/>} />
-        <Route path='/playlists' element={<MyPlaylists/>} />
-        <Route path='/explore' element={<Explore/>} />
-        <Route path='/now-playing' element={<NowPlaying/>} />
+        <Route path="/" element={<Layout />}>
+          {/* <Route path='/' element={<MyPlaylists/>} /> */}
+          <Route path='/favourites' element={<Favourites/>} />
+          <Route path='/playlists' element={<MyPlaylists/>} />
+          <Route path='/explore' element={<Explore/>} />
+          <Route path='/now-playing' element={<NowPlaying/>} />
+        </Route>
       </Routes>
     </Router>
     </MusicProvider>

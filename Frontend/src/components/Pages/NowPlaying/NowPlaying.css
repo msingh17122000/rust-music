@@ -2,6 +2,34 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 800px;
+    max-width: 600px;
     justify-items: center;
+    margin: 0 auto;
+    padding: 0px 20px;
+}
+.now-playing-music-data{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    text-align: center;
+}
+.now-playing-music-name{
+    font-size: 30px;
+    font-weight: 600;
+}
+.now-playing-music-artist{
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(206, 206, 206);
+}
+.now-playing-music-cover{
+    background-color: var(--primary-color);
+    text-align: center;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
