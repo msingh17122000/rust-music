@@ -32,45 +32,7 @@ function MyPlaylists() {
     <div>
       <h2>{currentSong?.title || "No song playing"}</h2>
       <br />
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        Play Song Button
-        <button
-          onClick={() => playSong(sampleSong)}
-          style={{ background: "orange", color: "white" }}
-        >
-          Play Song
-        </button>
-
-        {/* Toggle Play/Pause */}
-        <button onClick={()=>{togglePlayPause()}} style={{ background: "blue", color: "white" }}>
-          {isPlaying ? "Pause" : "Play"}
-        </button>
-
-        {/* Seek Bar (Progress Slider) */}
-        <input
-          type="range"
-          min="0"
-          className="music-progress-bar"
-          max="100"
-          value={progress}
-          onChange={(e) => seek(e.target.value)}
-        />
-
-        {/* Volume Control */}
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          value={volume}
-          onChange={(e) => changeVolume(e.target.value)}
-        />
-        <span> Volume: {Math.round(volume * 100)}%</span>
-
-        <Link to={'/now-playing'}>
-        Now Playing Page
-        </Link>
-      </div>
+ 
 
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
         {
