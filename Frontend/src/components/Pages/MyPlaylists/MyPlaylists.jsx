@@ -37,7 +37,7 @@ function MyPlaylists() {
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
         {
           sampleSongs.map((song,index)=>(
-            <div key={song.id} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px'}} onClick={()=>{playSong(song)}}>
+            <div key={song.id} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px',boxSizing:'border-box'}} onClick={()=>{playSong(song)}}>
               <div>{song.name}</div>
               <div>{song.artist}</div>
             </div>
