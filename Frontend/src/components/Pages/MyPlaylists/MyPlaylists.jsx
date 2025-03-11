@@ -38,12 +38,14 @@ function MyPlaylists() {
           sampleSongs.map((song,index)=>(
             <>
             <div key={song.id}  className='playlist-song' onClick={()=>{playSong(song)}}>
+            <div key={index} style={{maxWidth:'400px',background:'#333',
+            margin:'0 auto',width:'100%',padding:'10px 15px' ,borderRadius:"7px"}}
+             onClick={()=>{playSong(song)}}>
               <div>{song.name}</div>
               <div>{song.artist}</div>
             </div>
             <hr className='separator'/>
             </>
-          ))
         }
       </div>
     </div>

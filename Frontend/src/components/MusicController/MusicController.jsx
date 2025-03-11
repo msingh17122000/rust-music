@@ -29,6 +29,7 @@ const MusicController = () => {
       />
       
       {/* Volume Control */}
+      <span>🔊</span>
       <input
         type="range"
         min="0"
