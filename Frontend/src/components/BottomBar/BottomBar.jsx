@@ -5,7 +5,7 @@ import { FaHeart, FaPause, FaPlay } from "react-icons/fa";
 import { IoMusicalNotesSharp } from "react-icons/io5";
 import { IoIosPause, IoIosPlay, IoIosSearch } from "react-icons/io";
 import { LuHeart } from "react-icons/lu";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AnimatePresence, motion } from 'motion/react'
 import { MusicContext } from '../../context/MusicContext';
 
@@ -66,10 +66,12 @@ function BottomBar() {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', width: '100%',padding:'10px 0px'}}>
-          <Link to='/favourites' className='bottom-bar-navlink'><LuHeart size={20} /><div className='bottom-bar-title'>Favourites</div></Link>
-          <Link to='/playlists' className='bottom-bar-navlink'><IoMusicalNotesSharp size={20} /><div className='bottom-bar-title'>Playlist</div></Link>
-          <Link to='/explore' className='bottom-bar-navlink'><IoIosSearch size={22} /><div className='bottom-bar-title'>Explore</div></Link>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%',padding:'10px 0px'}}>
+          <NavLink to='/favourites' className={({ isActive }) => `bottom-bar-navlink ${isActive ? 'active-bottom-link' : ''}`}><LuHeart size={20} /><div className='bottom-bar-title'>Favourites</div></NavLink>
+          <div className='bottom-bar-separator'/>
+          <NavLink to='/playlists' className={({ isActive }) => `bottom-bar-navlink ${isActive ? 'active-bottom-link' : ''}`}><IoMusicalNotesSharp size={20} /><div className='bottom-bar-title'>Playlist</div></NavLink>
+          <div className='bottom-bar-separator'/>
+          <NavLink to='/explore' className={({ isActive }) => `bottom-bar-navlink ${isActive ? 'active-bottom-link' : ''}`}><IoIosSearch size={22} /><div className='bottom-bar-title'>Explore</div></NavLink>
         </div>
       </motion.div>
     </motion.div>
