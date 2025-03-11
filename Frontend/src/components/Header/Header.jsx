@@ -11,9 +11,9 @@ function Header() {
   const toggleHeaderBar = () => {
     setIsExpanded(!isExpanded)
   }
-  useEffect(()=>{
-   getPageTitle
-  },[location])
+  useEffect(() => {
+    getPageTitle
+  }, [location])
   // Function to determine the title based on the current page
   const getPageTitle = () => {
     switch (location.pathname) {
@@ -27,6 +27,8 @@ function Header() {
         return "Settings";
       case "/explore":
         return "Explore";
+      case "/now-playing":
+        return "Now Playing";
       default:
         return "Rust Music";
     }
@@ -35,7 +37,7 @@ function Header() {
   return (
     <div className='header-bar-wrapper'>
       <motion.div className='header-bar-content'
-      animate={{ height: isExpanded ? "auto" : "60px" }}
+        animate={{ height: isExpanded ? "auto" : "60px" }}
       >
 
         <div className='header-bar-visible-area'>
@@ -43,19 +45,19 @@ function Header() {
           <div className='header-bar-menu' onClick={toggleHeaderBar}>{isExpanded ? <IoIosArrowUp size={24} /> : <IoIosArrowDown size={24} />}</div>
         </div>
         <AnimatePresence>
-        {
-          isExpanded && (
-            <motion.div className='header-links-wrapper'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1,transition:{delay:0.2} }}
-            // exit={{opacity:0}}
-            transition={{ duration: 0.3 }}>
-              <Link>Favourites</Link>
-              <Link>My Playlists</Link>
-              <Link>Settings</Link>
-            </motion.div>
-          )
-        }
+          {
+            isExpanded && (
+              <motion.div className='header-links-wrapper'
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { delay: 0.2 } }}
+                // exit={{opacity:0}}
+                transition={{ duration: 0.3 }}>
+                <Link>Favourites</Link>
+                <Link>My Playlists</Link>
+                <Link>Settings</Link>
+              </motion.div>
+            )
+          }
         </AnimatePresence>
 
 

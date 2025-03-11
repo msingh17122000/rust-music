@@ -1,82 +1,90 @@
-import React, { useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import "./MyPlaylists.css"
+import { MusicContext } from '../../../context/MusicContext';
+import { Link } from 'react-router-dom';
 
 function MyPlaylists() {
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [volume, setVolume] = useState(1); 
 
-  // Toggle play/pause
-  const togglePlayPause = () => {
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  // Seek to a specific time
-  const seekAudio = (event) => {
-    const newTime = event.target.value;
-    audioRef.current.currentTime = newTime; // Set the audio time
-    setProgress(newTime);
-  };
+  
+  const {
+    currentSong,
+    isPlaying,
+    progress,
+    volume,
+    playSong,
+    togglePlayPause,
+    seek,
+    changeVolume,
+  } = useContext(MusicContext); // Get global state & functions
 
 
-  // Update progress bar as the audio plays
-  const updateProgress = () => {
-    setProgress(audioRef.current.currentTime);
-  };
-
-   // Change Volume
-   const changeVolume = (event) => {
-    const newVolume = event.target.value;
-    setVolume(newVolume);
-    audioRef.current.volume = newVolume;
-  };
+  const sampleSongs = [
+    { id: 1, name: "Legend", artist: "Sidhu Moose Wala", src:"./assets/music/Legend.mp3"},
+    { id: 2, name: "Wavy", artist: "Karan Aujla", src:"./assets/music/Wavy-Karan-Aujla.mp3"},
+    { id: 3, name: "Levels", artist: "Sidhu Moose Wala", src:"./assets/music/Levels.mp3"},
+    { id: 4, name: "Bars", artist: "Shubh", src:"./assets/music/Bars.mp3"},
+    { id: 5, name: "Sifar Safar", artist: "Karan Aujla", src:"./assets/music/SifarSafar.mp3"},
+    { id: 6, name: "Balle Balle Shout", artist: "AI", src:"./assets/music/BalleBalle.mp3"},
+    { id: 6, name: "Code Ki Baat", artist: "AI", src:"./assets/music/CodeKiBaat.mp3"},
+  ]
 
   return (
     <div>
-      Balle Balle Shout
-      <br/>
-      <br/>
-      <div style={{display:'flex',flexDirection:'column',gap:'10px'}}>
-      <audio
-        ref={audioRef}
-        src="./assets/music/BalleBalle.mp3"
-        onTimeUpdate={updateProgress} // Update progress bar
-        onEnded={() => setIsPlaying(false)} // Stop when finished
-      />
-      <button onClick={togglePlayPause} style={{background:'orange',color:'white'}}>
-        {isPlaying ? "Pause" : "Play"}
-      </button>
+      <h2>{currentSong?.title || "No song playing"}</h2>
+      <br />
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+        Play Song Button
+        <button
+          onClick={() => playSong(sampleSong)}
+          style={{ background: "orange", color: "white" }}
+        >
+          Play Song
+        </button>
 
-      {/* Seek Bar (Progress Slider) */}
-      <input
-        type="range"
-        min="0"
-        className='music-progress-bar'
-        max={audioRef.current?.duration || 0} // Ensure max is the duration
-        value={progress}
-        onChange={seekAudio} // Seek when user moves slider
-      />
+        {/* Toggle Play/Pause */}
+        <button onClick={()=>{togglePlayPause()}} style={{ background: "blue", color: "white" }}>
+          {isPlaying ? "Pause" : "Play"}
+        </button>
 
+        {/* Seek Bar (Progress Slider) */}
+        <input
+          type="range"
+          min="0"
+          className="music-progress-bar"
+          max="100"
+          value={progress}
+          onChange={(e) => seek(e.target.value)}
+        />
 
-      {/* Volume Control */}
-      <input
-        type="range"
-        min="0"
-        max="1"
-        step="0.1"
-        value={volume}
-        onChange={changeVolume}
-      />
-      <span> Volume: {Math.round(volume * 100)}%</span>
+        {/* Volume Control */}
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
+          value={volume}
+          onChange={(e) => changeVolume(e.target.value)}
+        />
+        <span> Volume: {Math.round(volume * 100)}%</span>
+
+        <Link to={'/now-playing'}>
+        Now Playing Page
+        </Link>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
+        {
+          sampleSongs.map((song,index)=>(
+            <div key={index} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px'}} onClick={()=>{playSong(song)}}>
+             
+              <div>{song.name}</div>
+              <div>{song.artist}</div>
+            </div>
+          ))
+        }
+      </div>
     </div>
-    </div>
-  )
+  );
 }
 
 export default MyPlaylists

@@ -13,6 +13,7 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: rgb(28, 28, 28,0.6);
+    backdrop-filter:saturate(180%) blur(10px);
     min-height: 70px;
     max-width: 400px;
     width: 100%;
