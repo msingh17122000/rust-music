@@ -30,17 +30,19 @@ function MyPlaylists() {
 
   return (
     <div>
-      <h2>{currentSong?.title || "No song playing"}</h2>
       <br />
  
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
+      <div style={{ display: "flex", flexDirection: "column",alignItems:'center',padding:'0px 10px',cursor:'pointer' }} >
         {
           sampleSongs.map((song,index)=>(
-            <div key={song.id} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px',boxSizing:'border-box'}} onClick={()=>{playSong(song)}}>
+            <>
+            <div key={song.id}  className='playlist-song' onClick={()=>{playSong(song)}}>
               <div>{song.name}</div>
               <div>{song.artist}</div>
             </div>
+            <hr className='separator'/>
+            </>
           ))
         }
       </div>

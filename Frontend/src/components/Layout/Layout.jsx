@@ -14,7 +14,7 @@ function Layout() {
   //   console.log("Current Time:", currentTime);
   // }, [currentSong, isPlaying, volumeLevel, currentTime]); 
   return (
-    <div>
+    <div className='layout-content' style={{marginTop:'100px'}}> 
             <Header/> 
             <BottomBar/>
     </div>
