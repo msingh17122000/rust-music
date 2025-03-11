@@ -25,25 +25,24 @@ function MyPlaylists() {
     { id: 4, name: "Bars", artist: "Shubh", src:"./assets/music/Bars.mp3"},
     { id: 5, name: "Sifar Safar", artist: "Karan Aujla", src:"./assets/music/SifarSafar.mp3"},
     { id: 6, name: "Balle Balle Shout", artist: "AI", src:"./assets/music/BalleBalle.mp3"},
-    { id: 6, name: "Code Ki Baat", artist: "AI", src:"./assets/music/CodeKiBaat.mp3"},
+    { id: 7, name: "Code Ki Baat", artist: "AI", src:"./assets/music/CodeKiBaat.mp3"},
   ]
 
   return (
     <div>
-      <h2>{currentSong?.title || "No song playing"}</h2>
       <br />
  
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
+      <div style={{ display: "flex", flexDirection: "column",alignItems:'center',padding:'0px 10px',cursor:'pointer' }} >
         {
           sampleSongs.map((song,index)=>(
-            <div key={index} style={{maxWidth:'400px',background:'#333',
-            margin:'0 auto',width:'100%',padding:'10px 15px' ,borderRadius:"7px"}}
-             onClick={()=>{playSong(song)}}>
+            <div key={index} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px'}} onClick={()=>{playSong(song)}}>
              
               <div>{song.name}</div>
               <div>{song.artist}</div>
             </div>
+            <hr className='separator'/>
+            </>
           ))
         }
       </div>
