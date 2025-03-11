@@ -31,11 +31,8 @@ function BottomBar() {
   return (
     <motion.div className='bottom-bar-wrapper'>
       <motion.div className='bottom-bar'
-      
-        
         animate={{ height: currentSong && 'auto' }}  // Expand when song plays
-
-        transition={{ type: "spring", stiffness: 100}} // Smooth animation
+        transition={{ type: "spring", stiffness: 100,duration:0.1}} // Smooth animation
       >
         <AnimatePresence>
           {
@@ -69,7 +66,7 @@ function BottomBar() {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div style={{ display: 'flex', justifyContent: 'space-evenly', width: '100%' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-evenly', width: '100%',padding:'10px 0px'}}>
           <Link to='/favourites' className='bottom-bar-navlink'><LuHeart size={20} /><div className='bottom-bar-title'>Favourites</div></Link>
           <Link to='/playlists' className='bottom-bar-navlink'><IoMusicalNotesSharp size={20} /><div className='bottom-bar-title'>Playlist</div></Link>
           <Link to='/explore' className='bottom-bar-navlink'><IoIosSearch size={22} /><div className='bottom-bar-title'>Explore</div></Link>
