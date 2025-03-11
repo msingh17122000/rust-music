@@ -14,7 +14,7 @@ const MusicController = () => {
   if (!currentSong) return null; // Hide if no song is playing
 
   return (
-    <div className="music-controller">
+    <div className="music-controller flex flex-col items-center">
       <h3>Now Playing: {currentSong.title} - {currentSong.artist}</h3>
       <button onClick={isPlaying ? pauseSong : () => playSong(currentSong)}>
         {isPlaying ? "Pause" : "Play"}
