@@ -7,12 +7,12 @@ function Layout() {
   const { currentSong, isPlaying, volumeLevel, currentTime } =
     useContext(MusicContext); // Access global state
 
-  useEffect(() => {
-    console.log("Current Song:", currentSong);
-    console.log("Is Playing:", isPlaying);
-    console.log("Volume Level:", volumeLevel);
-    console.log("Current Time:", currentTime);
-  }, [currentSong, isPlaying, volumeLevel, currentTime]); // Logs state changes
+  // useEffect(() => {
+  //   console.log("Current Song:", currentSong);
+  //   console.log("Is Playing:", isPlaying);
+  //   console.log("Volume Level:", volumeLevel);
+  //   console.log("Current Time:", currentTime);
+  // }, [currentSong, isPlaying, volumeLevel, currentTime]); 
   return (
     <div>
             <Header/> 

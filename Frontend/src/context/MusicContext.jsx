@@ -32,6 +32,8 @@ export const MusicProvider = ({ children }) => {
 
 
   const togglePlayPause = (song) => {
+    console.log(song);
+    
     if (currentSong?.id !== song.id) {
       // If a different song is selected, load it and play
       audioRef.current.src = song.url;

@@ -25,7 +25,7 @@ function MyPlaylists() {
     { id: 4, name: "Bars", artist: "Shubh", src:"./assets/music/Bars.mp3"},
     { id: 5, name: "Sifar Safar", artist: "Karan Aujla", src:"./assets/music/SifarSafar.mp3"},
     { id: 6, name: "Balle Balle Shout", artist: "AI", src:"./assets/music/BalleBalle.mp3"},
-    { id: 6, name: "Code Ki Baat", artist: "AI", src:"./assets/music/CodeKiBaat.mp3"},
+    { id: 7, name: "Code Ki Baat", artist: "AI", src:"./assets/music/CodeKiBaat.mp3"},
   ]
 
   return (
@@ -37,8 +37,7 @@ function MyPlaylists() {
       <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
         {
           sampleSongs.map((song,index)=>(
-            <div key={index} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px'}} onClick={()=>{playSong(song)}}>
-             
+            <div key={song.id} style={{maxWidth:'400px',background:'#333',margin:'0 auto',width:'100%',padding:'10px 15px'}} onClick={()=>{playSong(song)}}>
               <div>{song.name}</div>
               <div>{song.artist}</div>
             </div>
