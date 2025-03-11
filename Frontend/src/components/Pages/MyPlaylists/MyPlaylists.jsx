@@ -30,10 +30,11 @@ function MyPlaylists() {
 
   return (
     <div>
+      <h2>{currentSong?.title || "No song playing"}</h2>
       <br />
  
 
-      <div style={{ display: "flex", flexDirection: "column",alignItems:'center',padding:'0px 10px',cursor:'pointer' }} >
+      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }} >
         {
           sampleSongs.map((song,index)=>(
             <>
@@ -49,6 +50,8 @@ function MyPlaylists() {
         }
       </div>
     </div>
+    
+  
   );
 }
 

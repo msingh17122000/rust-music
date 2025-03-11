@@ -10,7 +10,7 @@
 }
 .bottom-bar{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
     background-color: rgb(28, 28, 28,0.6);
@@ -76,12 +76,4 @@
 }
 .bottom-music-controller-music-button:hover{
     filter: brightness(80%);
-}
-.bottom-bar-separator{
-    height: 100%;
-    width: 1px;
-    background-color: #202020;
-}
-.active-bottom-link{
-    color: var(--primary-color);
 }

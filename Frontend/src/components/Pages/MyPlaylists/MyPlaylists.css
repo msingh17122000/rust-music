@@ -41,15 +41,3 @@
     border: 1px solid #f50;
     box-shadow: -407px 0 0 400px #f50;
   }
-
-  .playlist-song{
-    background-color: black;
-    padding: 10px 15px;
-    border-radius: 10px;
-    max-width:400px;
-    width: 100%;
-    box-sizing:border-box;
-  }
-  .playlist-song:hover{
-    background-color: #1d1d1d;
-  }
