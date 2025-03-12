@@ -4,6 +4,12 @@ import "./NowPlaying.css"
 import { ImFileMusic } from "react-icons/im";
 import { IoIosMusicalNote, IoIosMusicalNotes, IoIosPause, IoIosPlay, IoIosSkipBackward, IoIosSkipForward } from "react-icons/io";
 import { motion } from "motion/react";
+import { BsFillSkipBackwardFill, BsFillSkipForwardFill } from "react-icons/bs";
+
+import { FaPause, FaPlay } from "react-icons/fa6";
+import { GiPauseButton } from "react-icons/gi";
+
+
 
 const NowPlaying = () => {
   const { currentSong, isPlaying, playSong, pauseSong, seek, changeVolume, currentTime, duration } =
@@ -24,11 +30,11 @@ const NowPlaying = () => {
         <div className="now-playing-music-artist">Artist - {currentSong.artist}</div>
       </div>
       <div className="now-playing-music-controller">
-        <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><IoIosSkipBackward size={30}/></motion.button>
+        <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><BsFillSkipBackwardFill size={30}/></motion.button>
         <motion.button onClick={isPlaying ? pauseSong : () => playSong(currentSong)} className="now-playing-music-controller-btn" whileTap={{scale:0.8}}>
-          {isPlaying ? <IoIosPause size={60} /> : <IoIosPlay size={60} />}
+          {isPlaying ? <GiPauseButton size={40} /> : <FaPlay size={40} />}
         </motion.button>
-        <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><IoIosSkipForward size={30}/></motion.button>
+        <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><BsFillSkipForwardFill size={30}/></motion.button>
       </div>
 
 

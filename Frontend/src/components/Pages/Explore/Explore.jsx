@@ -6,7 +6,7 @@ function Explore() {
     <div className='explore'>
       {/* Explore Page with search bar */}
       Explore Page with search bar
-      <MusicController /> 
+      {/* <MusicController />  */}
     </div>
   )
 }
