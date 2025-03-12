@@ -6,15 +6,15 @@
     justify-items: center;
     margin: 0 auto;
     padding: 0px 20px;
+    max-width: 300px;
 }
 .now-playing-music-data{
     display: flex;
     gap: 5px;
     flex-direction: column;
-    text-align: center;
 }
 .now-playing-music-name{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 600;
 }
 .now-playing-music-artist{
@@ -25,11 +25,22 @@
 .now-playing-music-cover{
     background-color: var(--primary-color);
     text-align: center;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 100%;
     margin: 0 auto;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.now-playing-music-controller{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.now-playing-music-controller-btn{
+    background-color: transparent;
+    outline: none;
+    border: 0px;
+    color: var(--primary-color);
 }
