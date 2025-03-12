@@ -77,7 +77,7 @@ function BottomBar() {
         </AnimatePresence>
 
         {/* Navigation */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', padding: '10px 0px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', padding: '15px 0px' }}>
           <NavLink to='/favourites' className={({ isActive }) => `bottom-bar-navlink ${isActive ? 'active-bottom-link' : ''}`}><LuHeart size={20} /><div className='bottom-bar-title'>Favourites</div></NavLink>
           <div className='bottom-bar-separator' />
           <NavLink to='/playlists' className={({ isActive }) => `bottom-bar-navlink ${isActive ? 'active-bottom-link' : ''}`}><IoMusicalNotesSharp size={20} /><div className='bottom-bar-title'>Playlist</div></NavLink>
