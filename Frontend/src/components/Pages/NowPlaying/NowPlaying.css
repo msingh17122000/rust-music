@@ -1,47 +1,53 @@
-.now-playing-page-wrapper{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 600px;
-    justify-items: center;
-    margin: 0 auto;
-    padding: 0px 20px;
-    max-width: 300px;
+.now-playing-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 600px;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 0px 20px;
+  max-width: 300px;
 }
-.now-playing-music-data{
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
+.now-playing-music-data {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
 }
-.now-playing-music-name{
-    font-size: 20px;
-    font-weight: 600;
+.now-playing-music-name {
+  font-size: 20px;
+  font-weight: 600;
 }
-.now-playing-music-artist{
-    font-size: 16px;
-    font-weight: 600;
-    color: rgb(206, 206, 206);
+.now-playing-music-artist {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgb(206, 206, 206);
 }
-.now-playing-music-cover{
-    background-color: var(--primary-color);
-    text-align: center;
-    height: 300px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.now-playing-music-cover {
+  background-color: var(--primary-color);
+  text-align: center;
+  height: 200px;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.now-playing-music-controller{
-    display: flex;
-    gap: 10px;
-    padding: 15px 0px;
-    justify-content: space-around;
+.now-playing-music-controller {
+  display: flex;
+  gap: 10px;
+  padding: 15px 0px;
+  justify-content: space-around;
 }
-.now-playing-music-controller-btn{
-    background-color: transparent;
-    outline: none;
-    border: 0px;
-    color: var(--primary-color);
+.play-pause-btn {
+    -webkit-box-shadow: 0px 0px 50px 5px rgba(215,107,0,0.8);
+    -moz-box-shadow:0px 0px 50px 5px rgba(215,107,0,0.8);
+    box-shadow: 0px 0px 50px 5px rgba(215,107,0,0.8);
+}
+.now-playing-music-controller-btn {
+  background-color: transparent;
+  outline: none;
+  border: 0px;
+  color: var(--primary-color);
 }

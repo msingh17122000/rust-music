@@ -31,8 +31,8 @@ const NowPlaying = () => {
       </div>
       <div className="now-playing-music-controller">
         <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><BsFillSkipBackwardFill size={30}/></motion.button>
-        <motion.button onClick={isPlaying ? pauseSong : () => playSong(currentSong)} className="now-playing-music-controller-btn" whileTap={{scale:0.8}}>
-          {isPlaying ? <GiPauseButton size={40} /> : <FaPlay size={40} />}
+        <motion.button onClick={isPlaying ? pauseSong : () => playSong(currentSong)} className="now-playing-music-controller-btn play-pause-btn" whileTap={{scale:0.8}} style={{background:'var(--primary-color)',borderRadius:'50%',color:'white',height:'60px',width:'60px'}}>
+          {isPlaying ? <GiPauseButton size={30} /> : <FaPlay size={30} />}
         </motion.button>
         <motion.button className="now-playing-music-controller-btn"whileTap={{scale:0.8}}><BsFillSkipForwardFill size={30}/></motion.button>
       </div>
