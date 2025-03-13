@@ -44,9 +44,9 @@ function BottomBar() {
       <motion.div className='bottom-bar'
         // animate={{ height: currentSong && 'auto' }}  // Expand when song plays
         // transition={{ type: "spring", stiffness: 100, duration: 0.1 }} // Smooth animation
-        animate={{ height: currentSong && showMusicController ? 'auto':'75px', }} // Expands first
+        animate={{ height: currentSong && showMusicController ? 'auto':'75px' }} // Expands first
         style={{ overflow: 'hidden' }}
-        transition={{ type: "spring", stiffness: 120, duration: 0.3 }}
+        transition={{ type: "spring", stiffness: 120, duration: 0.2,mass:1 }}
       >
         <AnimatePresence>
           {
