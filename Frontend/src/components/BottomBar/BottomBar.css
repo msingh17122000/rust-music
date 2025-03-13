@@ -22,7 +22,7 @@
     border: 1px solid #202020;
     border-radius: 10px;
     height: auto;
-    transform-origin: top right;
+    transform-origin: bottom ;
 }
 .bottom-bar-navlink{
     display: flex;
@@ -46,16 +46,26 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    border-bottom: 1px solid #202020;
 }
 .bottom-music-controller-music-data{
     display: flex;
-    flex-direction: column;
-    gap: 5px;
+    /* flex-direction: column; */
+    gap: 10px;
     text-decoration: none;
     color: white;
+    align-items: center;
 }
 .bottom-music-controller-music-data:hover{
     color: white;
+}
+.bottom-music-controller-mode-button{
+    background-color:var(--primary-color);
+    color: white;
+    height: 40px;
+    border-radius: 10px;
+    width: 40px;
+    border: 0px
 }
 .separator{
     width: 100%;
